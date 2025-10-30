@@ -71,11 +71,6 @@ jobs:
         echo "eula=true" > run/eula.txt
         luainminecraftbukkit_luacage_build="$NEW_REPO_DIR" ./gradlew runServer -PWorkflow=YES -PTargetJava=${{ matrix.Java }}
         grep -q "org.eu.smileyik.luaInMinecraftBukkitII" ./run/logs/latest.log && { echo "存在报错信息，终止！" >&2; exit 1; }
-        if [[ $(git status --porcelain) ]]; then
-          echo "changes_made=true" >> $GITHUB_OUTPUT
-        else
-          echo "changes_made=false" >> $GITHUB_OUTPUT
-        fi
         
     # - name: Print luacage.json
     #   if: |
