@@ -22,7 +22,7 @@
 --
 
 local DATA_FORDER_NAME = "SimpleHome"
-local json = require "@json/json"
+local json = require "@json/lib/json"
 local Player = luajava.bindClass("org.bukkit.entity.Player")
 
 -- read json from file and decode to lua table
